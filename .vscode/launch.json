@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch method",
+            "request": "launch",
+            "mainClass": "method",
+            "projectName": "efcc_cbe4d22"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"
