@@ -8,7 +8,10 @@ public class method {
 
         int num = sum(11, 22);
         System.out.println(num + "秀秀");
+        int over = sum(111, 222, 0);
+        System.out.println(over);
 
+        System.out.println(is_same(1, 3));
     }
 
     public static void xunhuan() {
@@ -38,4 +41,20 @@ public class method {
     public static int sum(int a, int b) {
         return a + b;
     }
+
+    public static int sum(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    public static boolean is_same(int a, int b) {
+
+        // boolean result = a == b ? true : false;
+        // return result;
+
+        if (a != b)
+            return false;
+        else
+            return true;
+    }
+
 }
