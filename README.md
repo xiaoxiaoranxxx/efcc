@@ -2,7 +2,7 @@
 
 # Welcome to Xiao Xiaoran Java Code library
 
-<img src="https://file.piczhan.com/uploads/2017/0607/dcTXYDBUVrbbYFzw.jpg?x-oss-process=style/w_870-h_auto" width="100%" height="100%">
+<img src="https://userblink.csdnimg.cn/20210629/qq_52549196/pic/77490f1f9ba2edde47b6ee7187afec1e-0.png?x-oss-process=image/interlace,1/format,jpg/resize,w_375" width="100%" height="100%">
 
 # Directory Structure -->EFCC
 
@@ -10,6 +10,7 @@ xiaoxiaoran1 *//学习笔记*
 =========
 + >xiao1
   + hello.java 
+  + method.java
 
 xiaoxiaoran2 *//null*
 ===========
