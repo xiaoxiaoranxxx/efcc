@@ -2,5 +2,6 @@
     "code-runner.executorMap": {
         "java": "cd $dir && javac -encoding utf-8 $fileName && java $fileNameWithoutExt",
     },
-    "code-runner.runInTerminal": true
+    "code-runner.runInTerminal": true,
+    "C_Cpp.default.compilerPath": "c:\\Users\\Administrator\\.vscode\\extensions\\bartmanabyss.amiga-debug-1.0.0\\bin\\opt\\bin\\m68k-amiga-elf-gcc.exe"
 }
