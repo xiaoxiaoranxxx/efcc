@@ -5,7 +5,6 @@ public class method {
         // xunhuan();
 
         System.out.print(sum(1, 2));
-
         int num = sum(11, 22);
         System.out.println(num + "秀秀");
         int over = sum(111, 222, 0);

@@ -8,15 +8,12 @@
 
 xiaoxiaoran1 *//学习笔记*
 =========
-+ >xiao1
-  + hello.java 
-  + method.java
 
 xiaoxiaoran2 *//null*
 ===========
 
 
-<img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1746651323,1193949173&fm=11&gp=0.jpg" width="100%" height="100%" >
+<img src="http://47.95.141.60/images/pic000.jpg" width="100%" height="100%" >
 
 
 *学习的课程来自于传智播客,感谢传智播客让我成长...*

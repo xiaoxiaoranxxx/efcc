@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Temp",
+            "request": "launch",
+            "mainClass": "Temp",
+            "projectName": "efcc_cbe4d22"
+        },
+        {
+            "type": "java",
+            "name": "Launch xiao",
+            "request": "launch",
+            "mainClass": "xiao",
+            "projectName": "efcc_cbe4d22"
+        },
+        {
+            "type": "java",
             "name": "Launch method",
             "request": "launch",
             "mainClass": "method",
