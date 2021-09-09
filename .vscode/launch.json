@@ -6,6 +6,36 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Purchase_goods",
+            "request": "launch",
+            "mainClass": "Purchase_goods",
+            "projectName": "efcc_62559aa9"
+        },
+        {
+            "type": "java",
+            "name": "Launch Temp",
+            "request": "launch",
+            "mainClass": "Temp",
+            "projectName": "efcc_62559aa9",
+            "noDebug": true,
+            "__progressId": "07a958ac-5984-4caa-a635-08aa2928ec4f"
+        },
+        {
+            "type": "java",
+            "name": "Launch method",
+            "request": "launch",
+            "mainClass": "method",
+            "projectName": "efcc_62559aa9"
+        },
+        {
+            "type": "java",
+            "name": "Launch Hello_world",
+            "request": "launch",
+            "mainClass": "Hello_world",
+            "projectName": "efcc_62559aa9"
+        },
+        {
+            "type": "java",
             "name": "Launch Temp",
             "request": "launch",
             "mainClass": "Temp",
