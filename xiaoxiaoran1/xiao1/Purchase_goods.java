@@ -2,40 +2,25 @@ import java.util.Scanner;
 
 public class Purchase_goods {
     public static void main(String[] args) {
-        char index;
-        int money = 20;
-        System.out.print("铅笔a,橡皮b,可乐c,零食d-->");
+        int index, money = 20, num, remainder;
+
+        String[] name = { "铅笔", "橡皮", "可乐", "零食" };
+        int[] danjia = { 1, 2, 3, 5 };
+        for (int i = 0; i < name.length; i++)
+            System.out.println("序号为->" + (i + 1) + ",这" + name[i] + "的价格为" + danjia[i] + "元");
+
+        System.out.print("请输入其他需要购买商品的序列号-->");
+
         Scanner sc = new Scanner(System.in);
-        index = sc.next().charAt(0);
-        xiuxiu(index, money - 12);
+        index = sc.nextInt();
+        index--;
+        
+        num = (money -= 12) / danjia[index];
+        remainder = money - danjia[index] * num;
+
+        System.out.println("可以购买商品" + name[index] + num + "个" + ",还剩" + remainder + "元");
+
         sc.close();
     }
 
-    public static void xiuxiu(char aa, int money) {
-        int num = 0;
-        int danjia = 0;
-        int lulu = 0;
-        String name = "666";
-        switch (aa) {
-            case 'a':
-                name = "铅笔";
-                danjia = 1;
-                break;
-            case 'b':
-                danjia = 2;
-                name = "橡皮";
-                break;
-            case 'c':
-                danjia = 3;
-                name = "可乐";
-                break;
-            case 'd':
-                danjia = 5;
-                name = "零食";
-                break;
-        }
-        num = money / danjia;
-        lulu = money - danjia * num;
-        System.out.println("可以购买商品" + name + num + "个" + ",还剩" + lulu + "元");
-    }
 }
