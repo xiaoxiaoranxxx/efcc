@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Randomly_extract",
+            "request": "launch",
+            "mainClass": "Randomly_extract",
+            "projectName": "efcc_62559aa9"
+        },
+        {
+            "type": "java",
+            "name": "Launch Login_Register",
+            "request": "launch",
+            "mainClass": "Login_Register",
+            "projectName": "efcc_62559aa9"
+        },
+        {
+            "type": "java",
             "name": "Launch Purchase_goods",
             "request": "launch",
             "mainClass": "Purchase_goods",
