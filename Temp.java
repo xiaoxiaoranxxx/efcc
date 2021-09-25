@@ -8,7 +8,7 @@ public class Temp {
         printArray(arr); // 打印数组元素
     }
 
-    // 定义打印数组元素的方法
+    // 定义打印数组元素的方法 
     public static void printArray(int[] arr) {
         // 循环遍历数组的元素
         for (int i = 0; i < arr.length; i++) {
