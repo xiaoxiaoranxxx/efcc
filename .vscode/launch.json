@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch X",
+            "request": "launch",
+            "mainClass": "X",
+            "projectName": "efcc_62559aa9"
+        },
+        {
+            "type": "java",
             "name": "Launch PayBooks",
             "request": "launch",
             "mainClass": "PayBooks",
