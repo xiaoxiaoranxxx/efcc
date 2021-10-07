@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch BankAccount",
+            "request": "launch",
+            "mainClass": "xiaoxiaoran1.xiao4.BankAccount",
+            "projectName": "efcc_62559aa9"
+        },
+        {
+            "type": "java",
             "name": "Launch X",
             "request": "launch",
             "mainClass": "X",
