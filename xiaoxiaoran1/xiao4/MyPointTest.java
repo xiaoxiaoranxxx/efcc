@@ -4,16 +4,16 @@ abstract class MyPoint {
 
 // 打印正方形
 class MyPrintSquare extends MyPoint {
-    @Override
+   
     public void show() {
         for (int i = 0; i < 5; ++i) {
             for (int j = 0; j < 5; ++j) {
                 if (j == 0 || j == 4)
-                    System.out.print('*');
+                    System.out.print("* ");
                 else if (i == 0 || i == 4)
-                    System.out.print('*');
+                    System.out.print("* ");
                 else
-                    System.out.print(' ');
+                    System.out.print("  ");
             }
             System.out.println();
         }
@@ -22,7 +22,6 @@ class MyPrintSquare extends MyPoint {
 
 // 打印圆形
 class MyPrintCircle extends MyPoint {
-    @Override
     public void show() {
         for (int y = 0; y <= 2 * 5; y += 2) {
             int x = (int) Math.round(5 - Math.sqrt(2 * 5 * y - y * y));
@@ -49,5 +48,6 @@ public class MyPointTest {
         MyPoint mp2 = new MyPrintCircle();
         myShow(mp1);
         myShow(mp2);
+        mp1.show();
     }
 }
