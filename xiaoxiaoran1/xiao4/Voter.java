@@ -56,7 +56,7 @@ public class Voter {
         tom.voterFor("是");
         tom.voterFor("否");
         jack.voterFor("是");
-        mike.voterFor("是");
+        mike.voterFor("66");
         // 打印投票结果
         Voter.printVoterResult();
     }
