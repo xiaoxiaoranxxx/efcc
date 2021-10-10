@@ -5,12 +5,13 @@
     "code-runner.runInTerminal": true,
     "C_Cpp.default.compilerPath": "c:\\Users\\Administrator\\.vscode\\extensions\\bartmanabyss.amiga-debug-1.0.0\\bin\\opt\\bin\\m68k-amiga-elf-gcc.exe",
     "java.project.sourcePaths": [
-       
+
         "xiaoxiaoran1/xiao1",
         "xiaoxiaoran1/xiao3",
         "xiaoxiaoran1/xiao4",
         "xiaoxiaoran1/饲养员喂动物",
         "",
 
-    ]
+    ],
+    "C_Cpp.default.configurationProvider": "BartmanAbyss.amiga-debug"
 }
