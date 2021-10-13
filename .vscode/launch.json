@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Testdemo",
+            "request": "launch",
+            "mainClass": "xiaoxiaoran1.薪资管理.Testdemo",
+            "projectName": "efcc_62559aa9"
+        },
+        {
+            "type": "java",
             "name": "Launch TestDemo",
             "request": "launch",
             "mainClass": "xiaoxiaoran1.多彩的声音.TestDemo",
