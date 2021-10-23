@@ -42,5 +42,4 @@ class Graduate implements StudentManagerInterface {
     public String getSex() {
         return sex;
     }
-    
 }

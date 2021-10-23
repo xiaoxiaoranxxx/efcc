@@ -21,6 +21,11 @@ public class Simple_construction {
 class xiuxiu {
     String name; // 成员属性
 
+    public xiuxiu(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
     int age; // 定义age属性
 
     static String school = "A大学"; // 定义school属性
@@ -30,10 +35,7 @@ class xiuxiu {
         System.out.println("我是xiuxiu类的构造方法");
     }
 
-    public xiuxiu(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
+    
 
     static {
         System.out.println("我是静态代码块");
