@@ -1,23 +1,23 @@
-import java.io.*;
+import javax.swing.*;
 
-public class Example18 {
-    public static void main(String[] args) throws Exception {
-        // 创建字节输入流
-        FileInputStream in = new FileInputStream("src.txt");
-        // 将字节流输入转换成字符输入流
-        InputStreamReader isr = new InputStreamReader(in);
-        // 赋予字符流对象缓冲区
-        BufferedReader br = new BufferedReader(isr);
-        FileOutputStream out = new FileOutputStream("des.txt");
-        // 将字节输出流转换成字符输出流
-        OutputStreamWriter osw = new OutputStreamWriter(out);
-        // 赋予字符输出流对象缓冲区
-        BufferedWriter bw = new BufferedWriter(osw);
-        String line;
-        while ((line = br.readLine()) != null) { // 判断是否读到文件末尾
-            bw.write(line); // 输出读取到的文件
-        }
-        br.close();
-        bw.close();
+class Temp extends JFrame {
+    private static void createAndShowGUI() {
+        // 创建并设置JFrame容器窗口
+        JFrame frame = new JFrame("JFrameTest");
+        // 设置关闭窗口时的默认操作
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        // 设置窗口标题
+        frame.setTitle("JFrameTest");
+        // 设置窗口尺寸
+        frame.setSize(350, 300);
+        // 设置窗口的显示位置
+        frame.setLocation(300, 200);
+        // 让组件显示
+        frame.setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        // 使用SwingUtilities工具调用createAndShowGUI()方法显示GUI程序
+        SwingUtilities.invokeLater(Temp::createAndShowGUI);
     }
 }
