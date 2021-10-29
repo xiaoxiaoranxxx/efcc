@@ -6,14 +6,15 @@
 
 # Directory Structure -->EFCC
 
-xiaoxiaoran1 *//学习笔记*
+xiaoxiaoran1 *//面向对象的基本案例*
 =========
 
-xiaoxiaoran2 *//null*
+xiaoxiaoran2 *//java的数据结构*
 ===========
 
 
 <img src="https://xiuxiu-1306082599.cos.ap-beijing.myqcloud.com/xiao/蜂蜜浏览器_dddddddddddd.jpg" width="100%" height="100%" >
 
-
-*学习的课程来自于传智播客,感谢传智播客让我成长...*
+**xiaoxiaoran学习的课程来自于**
+**-->传智播客的java从入门到精通**
+**-->彭其华老师的java面向对象程序设计**
