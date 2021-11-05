@@ -1,0 +1,425 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.math.BigDecimal;
+import java.math.BigInteger;
+
+class caculate extends JFrame {
+    private String number;// 存储输入的数
+    private JTextField jx;
+    private String a;// 存储前一个数
+    private String b;// 存储后一个数
+    private final String Add = "+";// 加
+    private final String Sub = "-";// 减
+    private final String Multi = "x";// 乘
+    private final String Dev = "/";// 除
+    private String abs;// 存储运算符号
+    private String result;// 存储结果
+    private BigDecimal b1;
+    private BigDecimal b2;
+    private int pone;
+    // private int flag =0;
+    private BigInteger number1;
+    private Clipboard clipboard;
+
+    public caculate() {
+        number = "";
+        result = "";
+        a = "";
+        b = "";
+        pone = 0;
+        clipboard = this.getToolkit().getSystemClipboard();
+        Initi();
+    }
+
+    private void Initi()// 初始化窗口
+    {
+        this.setTitle("计算器");
+        this.setBounds(300, 300, 400, 400);
+        this.setLayout(null);
+        creatUI();
+        this.setVisible(true);
+        this.setResizable(false);
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+    }
+
+    private void creatUI()// 制作界面
+    {
+        addMean();
+        addText();
+        addnumber();
+        addOther();
+    }
+
+    private void addMean() {
+        JMenuBar bar = new JMenuBar();
+        this.setJMenuBar(bar);
+        JMenu help = new JMenu("编辑(E)");
+        bar.add(help);
+        JMenuItem item = new JMenuItem("复制");
+        help.add(item);
+        item.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C, KeyEvent.VK_CLEAR));
+        item.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String text = jx.getText();
+                StringSelection stringSelection = new StringSelection(text);
+                clipboard.setContents(stringSelection, null);
+            }
+        });
+    }
+
+    /**
+     * 键盘输入
+     */
+    private void addText() {
+        jx = new JTextField();
+        jx.setBounds(10, 10, 380, 28);
+        jx.setFont(new Font("Dialog", 0, 16));
+        jx.setBorder(BorderFactory.createEtchedBorder(Color.lightGray, Color.gray));
+        jx.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if ((e.getKeyChar() >= '0' && e.getKeyChar() <= '9') || e.getKeyChar() == '.') {
+                    if (jx == null && e.getKeyChar() == '.') {
+                        e.consume();
+                    } else {
+
+                    }
+                    String str = Character.toString(e.getKeyChar());
+                    setnumber(str);
+                } else {
+                    e.consume();
+                }
+                if (e.getKeyChar() == '+') {
+                    setMethod(Add);
+                }
+                if (e.getKeyChar() == '-') {
+                    setMethod(Sub);
+                }
+                if (e.getKeyChar() == '*') {
+                    setMethod(Multi);
+                }
+                if (e.getKeyChar() == '/') {
+                    setMethod(Dev);
+                }
+                if (e.getKeyChar() == KeyEvent.VK_ENTER) {
+                    Cacualte();
+                    display();
+                }
+                if (e.getKeyChar() == KeyEvent.VK_BACK_SPACE) {
+                    number = jx.getText();
+                }
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+            }
+        });
+        this.add(jx);
+    }
+
+    public void setnumber(String number) {
+        this.number += number;
+    }
+
+    public void delete() {
+        if (number.length() != 0) {
+            number = number.substring(0, number.length() - 1);
+        }
+    }
+
+    /**
+     * 添加数字按键
+     */
+    public void addnumber() {
+        JButton button7 = new JButton("7");
+        button7.setBounds(10, 45, 70, 70);
+        this.add(button7);
+        button7.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setnumber("7");
+                jx.setText(number);
+            }
+        });
+        JButton button8 = new JButton("8");
+        button8.setBounds(90, 45, 70, 70);
+        this.add(button8);
+        button8.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setnumber("8");
+                jx.setText(number);
+            }
+        });
+        JButton button9 = new JButton("9");
+        button9.setBounds(170, 45, 70, 70);
+        this.add(button9);
+        button9.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setnumber("9");
+                jx.setText(number);
+            }
+        });
+        JButton button4 = new JButton("4");
+        button4.setBounds(10, 125, 70, 70);
+        this.add(button4);
+        button4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setnumber("4");
+                jx.setText(number);
+            }
+        });
+        JButton button5 = new JButton("5");
+        button5.setBounds(90, 125, 70, 70);
+        this.add(button5);
+        button5.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setnumber("5");
+                jx.setText(number);
+            }
+        });
+        JButton button6 = new JButton("6");
+        button6.setBounds(170, 125, 70, 70);
+        this.add(button6);
+        button6.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setnumber("6");
+                jx.setText(number);
+            }
+        });
+        JButton button1 = new JButton("1");
+        button1.setBounds(10, 205, 70, 70);
+        this.add(button1);
+        button1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setnumber("1");
+                jx.setText(number);
+            }
+        });
+        JButton button3 = new JButton("3");
+        button3.setBounds(170, 205, 70, 70);
+        this.add(button3);
+        button3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setnumber("3");
+                jx.setText(number);
+            }
+        });
+        JButton button2 = new JButton("2");
+        button2.setBounds(90, 205, 70, 70);
+        this.add(button2);
+        button2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setnumber("2");
+                jx.setText(number);
+            }
+        });
+
+    }
+
+    /**
+     * 添加其他和运算按钮
+     * 
+     * @param
+     */
+    public void addOther() {
+        JButton Ec = new JButton("MC");
+        Ec.setBounds(250, 45, 70, 70);
+        this.add(Ec);
+        Ec.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jx.setText("0");
+                number = "";
+                a = "";
+                b = "";
+                result = "";
+                // flag = 0;
+            }
+        });
+        JButton buttondeAll = new JButton("delete");
+        buttondeAll.setBounds(320, 45, 70, 70);
+        this.add(buttondeAll);
+        buttondeAll.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                delete();
+                jx.setText(number);
+            }
+        });
+        JButton sub = new JButton(Sub);
+        sub.setBounds(320, 125, 70, 70);
+        this.add(sub);
+        sub.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setMethod(Sub);
+            }
+        });
+        JButton add = new JButton(Add);
+        add.setBounds(250, 125, 70, 70);
+        this.add(add);
+        add.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setMethod(Add);
+            }
+        });
+
+        JButton multi = new JButton(Multi);
+        multi.setBounds(250, 205, 70, 70);
+        this.add(multi);
+        multi.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setMethod(Multi);
+            }
+        });
+        JButton dev = new JButton(Dev);
+        dev.setBounds(320, 205, 70, 70);
+        this.add(dev);
+        dev.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setMethod(Dev);
+            }
+        });
+        JButton equals = new JButton("=");
+        equals.setBounds(250, 285, 140, 70);
+        this.add(equals);
+        equals.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Cacualte();
+                display();
+            }
+        });
+        JButton point = new JButton(".");
+        point.setBounds(10, 285, 70, 70);
+        this.add(point);
+        point.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (!jx.getText().contains(".")) {
+                    if (jx.getText().length() != 0) {// 在无数字时输入小数点无效
+                        setnumber(".");
+                        jx.setText(number);
+                    }
+                }
+            }
+        });
+        JButton pow = new JButton("pow");
+        pow.setBounds(90, 285, 70, 70);
+        this.add(pow);
+        pow.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setMethod("pow");
+            }
+        });
+        JButton sqrt = new JButton("+/-");
+        sqrt.setBounds(170, 285, 70, 70);
+        this.add(sqrt);
+        sqrt.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (!jx.getText().contains("-")) {
+                    setnumber("-");
+                    jx.setText(number);
+                }
+            }
+        });
+        jx.getCaret().setVisible(true);
+    }
+
+    public void setMethod(String menthod) {
+        if (result == "" && a == "") {// 不以上次结果进行二次计算
+            a = jx.getText();
+        }
+        if (result != "")// 以上次结果进行再次计算
+        {
+            a = result;
+            if (a != jx.getText()) {
+                a = jx.getText();
+            }
+            result = "";
+        }
+        abs = menthod;
+        number = "";
+        jx.setText(number);
+    }
+
+    public void display() {
+        if (result != "") {
+            jx.setText(result);
+        } else if (b == "") {
+            jx.setText(a);
+        } else {
+            jx.setText(b);
+        }
+    }
+
+    /**
+     * 运算函数
+     */
+    public void Cacualte() {
+        if (jx.getText() == null) {
+            result = null;
+        } else {
+            b = jx.getText();
+            if (abs != "pow") {
+                if (a.length() != 0 && b.length() != 0) {
+                    b1 = new BigDecimal(a);
+                    b2 = new BigDecimal(b);
+                    if (abs.equals(Add)) {
+                        result = b1.add(b2).toString();
+                    } else if (abs.equals(Multi)) {
+                        result = (b1.multiply(b2).toString());
+                    } else if (abs.equals(Sub)) {
+                        result = (b1.subtract(b2).toString());
+                    } else if (abs.equals(Dev)) {
+                        result = (b1.divide(b2).toString());
+                    }
+                }
+            } else {
+                if (a.contains(".") || b.contains(".")) {
+                    number = "";
+                    a = "";
+                    b = "";
+                    JOptionPane.showConfirmDialog(null, "输入错误!", "Error", JOptionPane.CLOSED_OPTION);
+                    jx.setText("");
+                } else {
+                    number1 = new BigInteger(a);
+                    pone = Integer.valueOf(b);
+                    result = number1.pow(pone).toString();
+                }
+            }
+            number = "";
+        }
+    }
+}
+
+public class Temp {
+    public static void main(String[] args) {
+        new caculate();
+    }
+}
