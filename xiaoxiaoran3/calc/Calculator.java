@@ -285,7 +285,8 @@ public class Calculator {
                     result2 = a2 / b2;
                 }
             }
-            result = ((new Double(result2)).toString());
+            result=String.valueOf(result2);
+            //result = ((new Double(result2)).toString());
             result_TextField.setText(result);
         }
     }
