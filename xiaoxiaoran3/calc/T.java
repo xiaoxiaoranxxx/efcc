@@ -52,6 +52,8 @@ public class T extends JFrame implements ActionListener {
 		this.add("Center", result);
 		this.add("South", jP);
 
+		result.setEditable(false);
+
 	}
 
 	public void actionPerformed(ActionEvent e1) {
@@ -92,6 +94,7 @@ public class T extends JFrame implements ActionListener {
 
 		T xiao = new T("xiaoxiaoran");
 		xiao.setVisible(true);
+
 		xiao.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent arg0) {
 				System.exit(0);
