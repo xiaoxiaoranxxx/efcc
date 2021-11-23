@@ -4,8 +4,8 @@ public class HashMap666 {
     public static void main(String[] args) {
         HashMap<Integer,String> map = new HashMap<Integer, String>(); // 创建Map集合
         map.put(1, "张三"); // 存储键和值
-        map.put(2, "李四");
-        map.put(3, "王五");
+        map.put(33, "李四");
+        map.put(2, "王五");
         Set<Integer> keySet = map.keySet(); // 获取键的集合
         Iterator<Integer> it = keySet.iterator(); // 迭代键的集合
         while (it.hasNext()) {
