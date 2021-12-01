@@ -6,6 +6,7 @@ public class Line_read {
         // 创建一个BufferedReader缓冲对象
         BufferedReader br = new BufferedReader(reader);
         FileWriter writer = new FileWriter("1c.txt");
+        
         // 创建一个BufferdWriter缓冲区对象
         BufferedWriter bw = new BufferedWriter(writer);
         String str;
