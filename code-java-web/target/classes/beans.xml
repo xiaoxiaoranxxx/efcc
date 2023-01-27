@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="com.mybatis.pojo"/>
+    <context:annotation-config/>
+
+    <bean id="hello1" class="com.mybatis.pojo.Hello">
+        <property name="xiao" value="Spring"/>
+    </bean>
+
+    <bean id="address" class="com.mybatis.pojo.Address">
+        <property name="address" value="Spring-web"/>
+    </bean>
+
+    <bean id="stu" class="com.mybatis.pojo.Student">
+        <property name="name" value="xiao"/>
+        <property name="address" ref="address"/>
+        <property name="books" >
+            <array>
+                <value>book1</value>
+                <value>book2</value>
+                <value>book3</value>
+            </array>
+        </property>
+        <property name="hobbys">
+            <list>
+                <value>hobby1</value>
+                <value>hobbys1</value>
+                <value>hobbys31</value>
+            </list>
+        </property>
+        <property name="card">
+            <map>
+                <entry key="name" value="xai"/>
+                <entry key="phone" value="123456"/>
+            </map>
+        </property>
+        <property name="games">
+            <set>
+                <value>hobby1</value>
+                <value>hobby1</value>
+                <value>hobbys31</value>
+            </set>
+        </property>
+        <property name="wife">
+            <null></null>
+        </property>
+        <property name="info">
+            <props>
+                <prop key="value">202333</prop>
+            </props>
+        </property>
+    </bean>
+
+
+</beans>
+

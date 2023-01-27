@@ -1,0 +1,5 @@
+com\xiao\dao\BookMapper.class
+com\xiao\controller\BookController.class
+com\xiao\service\BookService.class
+com\xiao\service\BookServiceImpl.class
+com\xiao\pojo\Books.class
