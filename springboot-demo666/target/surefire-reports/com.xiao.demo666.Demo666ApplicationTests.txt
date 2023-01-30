@@ -1,0 +1,13 @@
+-------------------------------------------------------------------------------
+Test set: com.xiao.demo666.Demo666ApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 9.229 s <<< FAILURE! - in com.xiao.demo666.Demo666ApplicationTests
+contextLoads  Time elapsed: 5.412 s  <<< ERROR!
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: 
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.xiao.demo666.Demo666ApplicationTests.contextLoads(Demo666ApplicationTests.java:28)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at com.xiao.demo666.Demo666ApplicationTests.contextLoads(Demo666ApplicationTests.java:28)
+
